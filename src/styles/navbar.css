@@ -30,7 +30,7 @@
   background-image: url("../public/icons/menu.svg");
 }
 
-.navbar-menu {
+.menu-list {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -46,7 +46,7 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.menu-checkbox:checked + .menu-icon + .navbar-menu {
+.menu-checkbox:checked + .menu-icon + .menu-list {
   opacity: 1;
   transform: translateX(0);
   pointer-events: auto;
@@ -72,13 +72,13 @@ li > a {
   text-decoration: none;
 }
 
-.navbar-right-side{
+.navbar-right-side {
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 10px;
 }
-.search-icon{
+.search-icon {
   width: 24px;
   height: 24px;
 }
@@ -96,13 +96,10 @@ li > a {
   font-size: 13px;
 }
 
-
 .login,
-.search-input
-{
+.search-input {
   display: none;
 }
-
 
 @media (min-width: 950px) {
   .menu-icon,
@@ -110,33 +107,31 @@ li > a {
     display: none;
   }
 
-  .navbar-left-side{
+  .navbar-left-side {
     display: flex;
     gap: 10px;
     align-items: center;
   }
 
-  .navbar-menu {
-    opacity: 1;
-    border-top-width: 0;
-    transform: translateX(0);
-    display: flex;
-    order: 2;
+  .menu-list {
+    display: flex
+    flex-direction: row;
     position: relative;
-    background-color: transparent;
-    transition: none;
-  }
-
-  .menu-list{
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
     gap: 10px;
+    transform: translateX(0);
+    padding: 0;
+    background-color: transparent;
   }
 
-  .menu-list li{
+  .menu-list li {
     display: inline-block;
+    padding: 0;
+    margin: 0 10px;
   }
 
-  .navbar-logo{
+  .navbar-logo {
     order: 1;
   }
 
@@ -144,17 +139,16 @@ li > a {
     order: 2;
     display: inline-block;
   }
-  .signup{
+  .signup {
     order: 3;
   }
 }
 
-
 @media (min-width: 1060px) {
   .search-icon {
-    display: none
+    display: none;
   }
-  .search-input{
+  .search-input {
     display: inline-block;
     order: 1;
   }
@@ -166,7 +160,7 @@ li > a {
     border-radius: 30px;
     font-size: 14px;
     background-color: #fff;
-    background-image: url('../public/icons/search.webp');
+    background-image: url("../public/icons/search.webp");
     background-position: 15px center;
     background-repeat: no-repeat;
     background-size: 16px 16px;
@@ -176,7 +170,7 @@ li > a {
   .search-input:focus {
     box-shadow: 0 0 1px 4px rgba(239, 196, 239, 0.5);
   }
-  }
+}
 
 @media (min-width: 1400px) {
   .navbar-logo {
