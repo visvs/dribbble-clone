@@ -1,0 +1,101 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 80px 24px 0;
+    margin-bottom: 72px;
+}
+
+.chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 16px;
+    min-height: 40px;
+    border-radius: 32px;
+    text-align: center;
+    padding: 10px 16px;
+    background-color: #ffda79;
+    animation: colorCycle 32s linear infinite;
+}
+
+.hero-title {
+    font-size: 48px;
+    margin: 40px 0 24px;
+    font-family: 'Source Serif 4', Georgia,  serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.hero-message {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 32px;
+}
+
+.hero-button {
+    margin-top: 32px;
+    padding: 0 24px;
+    height: 54px;
+    border-color: transparent;
+    background-color: black;
+    color: white;
+    border-radius: 32px;
+}
+
+@media (min-width: 380px){
+    .chip {
+        width: 330px;
+    }
+}
+
+@media (min-width: 760px){
+    .chip {
+        width: 330px;
+    }
+    .hero-title {
+        font-size: 72px;
+    }
+    .hero-message {
+        font-size: 20px;
+    }
+    .hero {
+        padding: 80px 42px 0;
+    }
+}
+
+@media (min-width: 920px){
+    .hero-title {
+        margin: 40px 10% 24px;
+    }
+}
+
+@media (min-width: 1024px){
+    .hero {
+        padding: 80px 12% 0;
+    }
+    .hero-title {
+        margin: 40px 12% 24px;
+    }
+}
+
+@keyframes colorCycle {
+    0% {
+        background-color: #ffda79;
+    }
+    25% {
+        background-color: #ffabe7;
+    }
+    50% {
+        background-color: #d2bcf3;
+    }
+    75% {
+        background-color: #edf3d8;
+    }
+    100% {
+        background-color: #ffda79;
+    }
+}
