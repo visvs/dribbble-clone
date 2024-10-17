@@ -18,7 +18,7 @@
     text-align: center;
     padding: 10px 16px;
     background-color: #ffda79;
-    animation: colorCycle 32s linear infinite;
+    animation: colorCycle 32s linear infinite; /*name duration timing-function iteration-count*/
 }
 
 .hero-title {

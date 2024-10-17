@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
   height: 100px;
   padding: 0 24px;
   position: relative;
@@ -10,9 +9,8 @@
 
 .navbar-logo {
   width: 90px;
-  height: 35px;
+  height: 40px;
   object-fit: cover;
-  margin-bottom: 5px;
 }
 
 .menu-checkbox,
@@ -35,25 +33,14 @@
   flex-direction: column;
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  pointer-events: none;
+  width: 100%;
   border-top: 1px solid #e7e7e9;
   padding: 32px;
   background-color: white;
+  pointer-events: none;
+  opacity: 0;
   transform: translateX(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.menu-checkbox:checked + .menu-icon + .menu-list {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
-.menu-checkbox:checked + .menu-icon {
-  background-image: url("../public/icons/close.webp");
 }
 
 .menu-list li {
@@ -72,26 +59,40 @@ li > a {
   text-decoration: none;
 }
 
+.menu-checkbox:checked + .menu-icon + .menu-list {
+  opacity: 100%;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.menu-checkbox:checked + .menu-icon {
+  background-image: url("../public/icons/close.webp");
+}
+
 .navbar-right-side {
   display: flex;
-  justify-content: end;
   align-items: center;
   gap: 10px;
 }
+
 .search-icon {
+  margin-top: 10px;
   width: 24px;
   height: 24px;
 }
 
-.signup {
+.navbar-button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100px;
   height: 48px;
+}
+
+.signup {
   font-weight: 600;
   color: white;
-  background-color: #000;
+  background-color: black;
   border-radius: 24px;
   font-size: 13px;
 }
@@ -114,7 +115,7 @@ li > a {
   }
 
   .menu-list {
-    display: flex
+    display: flex;
     flex-direction: row;
     position: relative;
     opacity: 1;
@@ -122,6 +123,8 @@ li > a {
     gap: 10px;
     transform: translateX(0);
     padding: 0;
+    order: 2;
+    border-top: 0;
     background-color: transparent;
   }
 
@@ -136,8 +139,8 @@ li > a {
   }
 
   .login {
+    display: flex;
     order: 2;
-    display: inline-block;
   }
   .signup {
     order: 3;
@@ -151,8 +154,6 @@ li > a {
   .search-input {
     display: inline-block;
     order: 1;
-  }
-  .search-input {
     width: 250px;
     height: 48px;
     padding: 0 24px 0 48px;
@@ -175,10 +176,6 @@ li > a {
 @media (min-width: 1400px) {
   .navbar-logo {
     display: none;
-  }
-
-  .navbar-menu {
-    padding-left: 0;
   }
 
   .navbar-logo-desktop {
